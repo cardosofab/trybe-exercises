@@ -26,24 +26,24 @@ div:hover {
   }
   
   /* 3. Estilize cada uma das tags <h3>. */
-  h3:nth-of-type(1) {
+  div:nth-of-type(1) h3 {
     color:yellow
   }
   
-  h3:nth-of-type(2) {
-    color: green 
+  div:nth-of-type(2) h3 {
+    color: blue
   }
   
-  h3:nth-of-type(3) {
-    font-size: 20px;
+  div:nth-of-type(3) h3 {
+    font-size: 10px;
   }
   
-  h3:nth-of-type(4) {
+  div:nth-of-type(4) h3 {
     font-family: monospace;
   }
   
-  h3:nth-of-type(5) {
-    font-style: italic
+  div:nth-of-type(5) h3 {
+    font: status-bar;
   }
   
   /* 4. Faça a terceira div ser maior que as demais. */
