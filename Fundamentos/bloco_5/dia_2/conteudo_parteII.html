@@ -1,0 +1,40 @@
+<div id="paiDoPai">
+  <div id="pai">
+    <div id="primeiroFilho"></div>
+    <div id="elementoOndeVoceEsta">
+      <div id="primeiroFilhoDoFilho"></div>
+      <div id="segundoEUltimoFilhoDoFilho"></div>
+    </div>
+    Atenção!
+    <div id="terceiroFilho"></div>
+    <div id="quartoEUltimoFilho"></div>
+  </div>
+</div>
+<script>
+
+  // 1 - Crie um irmão para elementoOndeVoceEsta .
+  let pai = document.querySelector('#pai');
+  console.log(pai);
+  let irmaoElemento = document.createElement('h6');
+  pai.appendChild(irmaoElemento);
+  console.log(irmaoElemento);
+
+  // 2 - Crie um filho para elementoOndeVoceEsta .
+
+  let elemento = document.querySelector('#elementoOndeVoceEsta');
+  let filhoElemento = document.createElement('p');
+  elemento.appendChild(filhoElemento);
+
+  // 3 - Crie um filho para primeiroFilhoDoFilho .
+
+  let primeiroFilho = document.getElementById('primeiroFilhoDoFilho');
+  let filhoDoPrimeiroFilho = document.createElement('h2');
+  primeiroFilho.appendChild(filhoDoPrimeiroFilho);
+
+  // 4 - A partir desse filho criado, acesse terceiroFilho .
+
+  let tagFilhoDoPrimeiroFilho = document.querySelector('h2');
+  console.log(tagFilhoDoPrimeiroFilho);
+  console.log(tagFilhoDoPrimeiroFilho.parentNode.parentNode.nextElementSibling);
+ 
+</script>
