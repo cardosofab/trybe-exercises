@@ -28,6 +28,7 @@ body {
   text-align: center;
   transition: all 0.25s ease;
   width: 200px;
+  border-radius: 50px;
 }
 
 h1 {
@@ -67,4 +68,10 @@ input:focus {
 
 .tech {
   transform: translateY(-20px);
+}
+
+#mySpotrybefy {
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
 }
