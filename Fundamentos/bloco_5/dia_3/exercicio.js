@@ -55,7 +55,7 @@ preencherDias();
 
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
-function botao(string) {
+function botaoHoliday(string) {
   let divBotao = document.querySelector('.buttons-container');
   let botaoFeriados = document.createElement('button');
   botaoFeriados.innerText = string;
@@ -63,5 +63,27 @@ function botao(string) {
   divBotao.appendChild(botaoFeriados);
 }
 
-botao('Feriados');
+botaoHoliday('Feriados');
+
+// Exercício 3:
+
+// Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
+
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)" .
+
+function corBotaoHolidayClick() {
+  let diasFeriados = document.querySelectorAll('.holiday');
+  for (let i = 0; i < diasFeriados.length; i += 1) {
+    if (diasFeriados[i].style.backgroundColor === 'green') {
+      diasFeriados[i].style.backgroundColor = '#eee';
+    } else {
+      diasFeriados[i].style.backgroundColor = 'green';
+    }
+    
+    
+  }
+  
+}
+let botaoFeriados = document.querySelector('#btn-holiday');
+botaoFeriados.addEventListener('click',corBotaoHolidayClick);
 
