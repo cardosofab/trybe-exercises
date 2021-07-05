@@ -64,11 +64,11 @@ input.addEventListener('change',typingBox);
 // 4 - Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 
-function doublemouseover () {
+function doubleMouseClick () {
   window.open("https://cardosofab.github.io/", "_blank");
 }
 
-myWebpage.addEventListener('dblmouseover',doublemouseover);
+myWebpage.addEventListener('dblclick',doubleMouseClick);
 
 // 5 - Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
