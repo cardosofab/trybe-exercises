@@ -218,7 +218,30 @@ function diasCor(event) {
 let todosOsDias = document.querySelector('#days');
 todosOsDias.addEventListener('click',diasCor);
 
+// Bônus: 
 
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+
+// Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+
+// Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+
+// Dica - Propriedade: keyCode .
+
+function addAppointment() {
+  let caixaDeTexto = document.querySelector('input');
+  let compromissos = document.querySelector('.input-container h3');
+  let compromisso = document.createElement('li');
+  compromisso.innerText = caixaDeTexto.value;
+  compromissos.appendChild(compromisso);
+  if (caixaDeTexto.value === '') {
+    alert('Nenhum carectere inserido');
+  }
+  caixaDeTexto.value = '';
+}
+
+let caixaDeTexto = document.querySelector('input');
+caixaDeTexto.addEventListener('change',addAppointment);
 
 
    
