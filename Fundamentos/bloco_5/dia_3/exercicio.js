@@ -82,7 +82,7 @@ function corBotaoHolidayClick() {
     
     
   }
-  
+  console.log(diasFeriados);
 }
 let botaoFeriados = document.querySelector('#btn-holiday');
 botaoFeriados.addEventListener('click',corBotaoHolidayClick);
@@ -162,6 +162,7 @@ function tarefaPersonalizada(tarefa) {
  }
 
  tarefaPersonalizada('Cozinhar');
+ 
 
 //  Exercício 8:
 
@@ -179,5 +180,28 @@ function labelColor(cor) {
   divTarefa.appendChild(divLegenda);
 }
 
-labelColor('#f1f1f1');
+labelColor('green');
+
+// Exercício 9:
+
+// Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
+
+// Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+function changingClass() {
+  let divLegenda = document.querySelector('.task');
+  if (divLegenda.className === 'task-selected') {
+    divLegenda.className = 'task';
+  } else {
+    divLegenda.className = 'task-selected';
+  }  
+}
+
+ let divLegenda = document.querySelector('.task');
+ divLegenda.addEventListener('click',changingClass);
+
+
+   
+  
+
 
