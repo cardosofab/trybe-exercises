@@ -125,3 +125,28 @@ function textoBotaoSextasClick() {
 }
 let botaoSextasFeiras = document.querySelector('#btn-friday');
 botaoSextasFeiras.addEventListener('click',textoBotaoSextasClick);
+
+// Exercício 6:
+
+// Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+
+// Dica - Propriedade: event.target .
+
+function zoomIn(event) {
+  let diasDoMes = document.querySelector('#days');
+  event.target.style.fontSize = '35px';
+  
+}
+
+function zoomOut(event) {
+  let diasDoMes = document.querySelector('#days');
+  event.target.style.fontSize = '20px';
+}
+
+let diasDoMes = document.querySelector('#days');
+
+  diasDoMes.addEventListener('mouseover',zoomIn);
+  diasDoMes.addEventListener('mouseout',zoomOut);
+
+  
+
