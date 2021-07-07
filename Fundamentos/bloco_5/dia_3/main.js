@@ -55,8 +55,9 @@ divTres.addEventListener('mouseover', handleChangeTech);
 // 3 - Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
-function typingBox() {
-  divUm.innerText = input.value; 
+function typingBox(event) {
+  let classTech = document.querySelector('.tech');
+  classTech.innerText = input.value;
 }
 
 input.addEventListener('change',typingBox);
