@@ -18,6 +18,5 @@ function preventDefault() {
 
 window.onload = function () {
   optionState();
-  preventDefault();
-  
+  preventDefault();  
 }
