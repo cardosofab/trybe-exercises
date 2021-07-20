@@ -92,6 +92,32 @@
   }
 
   #content {
+    min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #aside {
+    display: none;
+  }
+
+  #navigation {
+    padding-top: 90px;
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header {
+    position: fixed;
     width: 100%;
   }
 }
