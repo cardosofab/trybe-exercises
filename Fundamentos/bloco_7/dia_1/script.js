@@ -89,3 +89,22 @@ const longestWord = frase => {
 
 console.log(longestWord("Antônio foi no banheiro e não sabemos o que aconteceu")); // retorna 'aconteceu'
 
+// 4. Crie um código JavaScript com a seguinte especificação:
+
+// Não se esqueça de usar template literals
+
+// Função 1 : Escreva uma função que vai receber uma string como parâmetro. Sua função deverá procurar pela letra x em uma string qualquer que você determinar e substituir pela string que você passou como parâmetro. Sua função deve retornar essa nova string .
+
+// Exemplo:
+// String determinada: "Tryber x aqui!"
+// Parâmetro: "Bebeto"
+// Retorno: "Tryber Bebeto aqui!"
+
+// Um array com escopo global, que é o escopo do arquivo JS , nesse caso, contendo cinco strings com suas principais skills .
+
+const arraySkills = ['HTML','CSS','JavaScript','Soft','Inteligência'];
+const mudaFrase = string => {
+  const stringDeterminada = 'Tryber x aqui!'  
+  return (`Tryber ${string} aqui!`);
+}
+console.log(mudaFrase('Bebeto'));
