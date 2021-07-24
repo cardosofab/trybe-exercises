@@ -35,3 +35,13 @@ const listKeys = object => {
 }
 listKeys(lesson1);
 
+// 3.Crie uma função para mostrar o tamanho de um objeto.
+
+const lengthObject = object => {
+  const arrayObject = Object.entries(object);
+  const length = arrayObject.length;
+  console.log(length);
+}
+
+lengthObject(lesson1);
+
