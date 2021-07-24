@@ -100,4 +100,3 @@ const getValueByNumber = (object, positionKey) => {
 }
 
 console.log(getValueByNumber(lesson1, 0));
-// Output: 'Matématica'
