@@ -78,3 +78,16 @@ console.log(allLessons);
      turno: 'noite' }
 };
 */
+
+// 6.Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
+
+const numberStudents = () => {
+  const studentsLesson1 = allLessons.lesson1.numeroEstudantes;
+  const studentsLesson2 = allLessons.lesson2.numeroEstudantes;
+  const studentsLesson3 = allLessons.lesson3.numeroEstudantes;
+  console.log(studentsLesson1 + studentsLesson2 + studentsLesson3);
+}
+
+numberStudents();
+
+
