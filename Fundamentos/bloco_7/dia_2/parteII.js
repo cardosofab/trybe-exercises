@@ -27,3 +27,11 @@ const exercicio1 = (object,key,value) => {
 
 exercicio1(lesson2,'turno','manhã');
 
+// 2.Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
+
+const listKeys = object => {
+  const keys = Object.keys(object);
+  console.log(keys);
+}
+listKeys(lesson1);
+
