@@ -122,3 +122,20 @@ console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
 
 console.log(Object.entries(lesson3)[1].length);
+
+// Bônus
+
+// 1. Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+
+const studentsMath = () => {
+  const subject = Object.keys(allLessons);
+  let resultado = 0;
+  for (let i in subject) {
+    if (allLessons[subject[i]].materia === 'Matemática') {
+      resultado += allLessons[subject[i]].numeroEstudantes;
+    }  
+  }
+  return resultado;
+}
+
+console.log(studentsMath());
