@@ -45,3 +45,12 @@ const lengthObject = object => {
 
 lengthObject(lesson1);
 
+// 4.Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
+
+const objectValues = object => {
+  const values = Object.values(object);
+  console.log(values);
+}
+
+objectValues(lesson1);
+
