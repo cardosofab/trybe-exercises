@@ -61,3 +61,13 @@ const orderModifier = (order) => {
 }
 
 orderModifier(order);
+
+const lengthObject = object => {
+  const arrayObject = Object.entries(object);
+  const length = arrayObject.length;
+  console.log(arrayObject);
+  console.log(arrayObject[2][1]);
+  console.log(length);
+}
+
+lengthObject(order);
