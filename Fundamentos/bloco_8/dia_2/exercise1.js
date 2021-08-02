@@ -186,3 +186,19 @@ function everyoneWasBornOnSecXX() {
 
 assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult2);
 
+// 6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
+
+const expectedResult3 = true;
+
+function someBookWasReleaseOnThe80s() {
+  // escreva seu código aqui
+  return books.some((book) => {
+    if (book.releaseYear > 1979 && book.releaseYear < 1990) {
+      return true;
+    }
+    return false;
+  });
+}
+
+assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult3);
+
