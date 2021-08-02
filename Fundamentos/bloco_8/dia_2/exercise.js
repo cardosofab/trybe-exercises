@@ -195,10 +195,10 @@ assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResult3);
 const expectedResult4 = false;
 
 function authorUnique() {
-  // escreva seu código aqui
-  books.forEach((book) => {
-
-  });
+  return books.every((book) =>
+    books.some((bookSome) =>
+      (bookSome.author.birthYear === book.author.birthYear)
+      && (bookSome.author.name !== book.author.name)));
 }
 
-// assert.strictEqual(authorUnique(), expectedResult4);
+assert.strictEqual(authorUnique(), expectedResult4);
