@@ -34,15 +34,7 @@ const musicas = [
   { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
 ]
 
-// function findMusic(musica, id) {
-//   // Adicione seu código aqui
-//   if (musica.id === id) {
-//     return true;
-//   }
-//   return false;
-// }
-
 function findMusic(id) {
-  return musicas.find((musica) => musica.id === id);
+  // return musicas.find((musica) => musica.id === id);
 }
-console.log(findMusic('31031685'));
+console.log(musicas.find(findMusic('31031685')));
