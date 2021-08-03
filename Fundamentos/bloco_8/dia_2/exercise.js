@@ -196,7 +196,7 @@ const expectedResult4 = false;
 
 function authorUnique() {
   return books.every((book) =>
-    books.some((bookSome) =>
+    !books.some((bookSome) =>
       (bookSome.author.birthYear === book.author.birthYear)
       && (bookSome.author.name !== book.author.name)));
 }
