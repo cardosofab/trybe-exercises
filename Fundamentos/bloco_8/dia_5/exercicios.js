@@ -13,3 +13,15 @@ const rectangles = [rectangle1, rectangle2, rectangle3];
 rectangles.forEach((rectangle) => {
   assert.strictEqual(rectangleArea(...rectangle), rectangle[0] * rectangle[1]); // altere a chamada da funcao rectangleArea
 });
+
+// 2 - Crie uma função sum que dado um número variável de elementos retorna a soma desses elementos. Ou seja:
+// Dica: use parâmetro rest .
+
+// escreva sum abaixo
+const sum = (...numbers) => numbers.reduce((soma, number) => soma + number, 0);
+
+assert.strictEqual(sum(), 0);
+assert.strictEqual(sum(1), 1);
+assert.strictEqual(sum(1, 2), 3);
+assert.strictEqual(sum(1, 2, 3), 6);
+assert.strictEqual(sum(1, 2, 3, 4), 10);
