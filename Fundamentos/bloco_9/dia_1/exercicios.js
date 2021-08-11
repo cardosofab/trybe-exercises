@@ -71,9 +71,15 @@ const getMarsTemperature = () => {
 };
 
 // crie a função sendMarsTemperature abaixo
-const sendMarsTemperature = (callback) => {
+const sendMarsTemperature = (onSuccess, onError) => {
   setTimeout(() => console.log(`Mars temperature is: ${getMarsTemperature()} degree Celsius`), messageDelay);
-  setTimeout(() => callback(getMarsTemperature()), messageDelay);
+  setTimeout(() => onSuccess(getMarsTemperature()), messageDelay);
+  setTimeout(() => onError(`Robot is busy`), messageDelay);
+  const success = Math.random() <= 0.6;
+  setTimeout(() => {
+    if (success) onSuccess(getMarsTemperature());
+    else onError(`Robot is busy`);
+  }, messageDelay());  
 }
 
 // sendMarsTemperature(); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
@@ -90,6 +96,18 @@ const greet = (temperature) =>
 
 // definição da função sendMarsTemperature...
 
-sendMarsTemperature(temperatureInFahrenheit); // imprime "It is currently 47ºF at Mars", por exemplo
-sendMarsTemperature(greet); // imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo
+// sendMarsTemperature(temperatureInFahrenheit); // imprime "It is currently 47ºF at Mars", por exemplo
+// sendMarsTemperature(greet); // imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo
 
+// 6 - Por fim, o robô Curiosity tem uma taxa de sucesso de envio de mensagem de 60% devido ao fato de o robô já estar muito ocupado com outras operações. Logo, adicione na função sendMarsTemperature um outro callback que contenha as ações a serem tomadas em caso de falha.
+
+const handleError = (errorReason) =>
+  console.log(`Error getting temperature: ${errorReason}`);
+
+// definição da função sendMarsTemperature...
+
+// imprime "It is currently 47ºF at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
+sendMarsTemperature(temperatureInFahrenheit, handleError);
+
+// imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
+sendMarsTemperature(greet, handleError);
