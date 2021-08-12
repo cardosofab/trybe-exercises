@@ -14,12 +14,14 @@ const promise = new Promise((resolve, reject) => {
   }
   console.log(arrayNumbers);
   const soma = arrayNumbers.reduce((valorInicial, currentValue) => valorInicial + currentValue);
-  console.log(soma);
-
   if (soma > 8000) {
     return reject(soma)
   }
   resolve(soma);
 })
-.then(soma => console.log(`A promise foi resolvida. A soma é ${soma}`))
-.catch(soma => console.log(`A promise foi rejeitada. A soma é ${soma}`));
+.then(soma => {
+  const array = [2, 3, 5, 10];
+  return array.map((divisor) => Math.round(soma / divisor));
+})
+.then((array) => console.log(`A array com a soma dividida por 2, 3, 5 e 10 é: [${array}]`))
+.catch(soma => console.log(`É mais de oito mil! Essa promise deve estar quebrada! A soma é ${soma}`));
