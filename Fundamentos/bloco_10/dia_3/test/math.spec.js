@@ -18,3 +18,16 @@ test("multiplicar com retorno padrão de valor '10'", () => {
   expect(math.multiplicar).toHaveBeenCalled();
   expect(math.multiplicar()).toBe(10);
 });
+
+// 3 - Faça o mock da função somar e implemente uma função que recebe dois valores e retorna sua soma. Teste a chamada, o retorno e os parâmetros passados.
+
+test("Testa chamada, retorno e parâmetros passados para soma com entrada de dois valores", async () => {
+  const mockSomar = jest.spyOn(math, "somar");
+  mockSomar.mockResolvedValue(5);
+
+  mockSomar(2, 3);
+  expect(mockSomar).toHaveBeenCalled();
+  expect(mockSomar).toHaveBeenCalledTimes(1);
+  expect(mockSomar).toHaveBeenCalledWith(2, 3);
+  await expect(mockSomar(2, 3)).resolves.toBe(5);
+});
