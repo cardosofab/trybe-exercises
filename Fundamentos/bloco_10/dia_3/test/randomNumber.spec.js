@@ -7,3 +7,14 @@ test("testando se a função foi chamada, qual seu retorno e quantas vezes foi c
   expect(service.randomNumber).toHaveBeenCalled();
   expect(service.randomNumber).toHaveBeenCalledTimes(1);
 });
+
+// 2 - Com a mesma função do exercício anterior, utilizando o mock, crie uma nova implementação que deve receber dois parâmetros e retornar a divisão do primeiro pelo segundo. Essa implementação deve ocorrer uma única vez. Faça os testes necessários.
+
+test("testando se a função foi chamada, qual seu retorno, quantas vezes foi chamada e com quais parâmetros", () => {
+  service.randomNumber = jest.fn().mockImplementationOnce((a, b) => a / b);
+
+  expect(service.randomNumber(10, 2)).toBe(5);
+  expect(service.randomNumber).toHaveBeenCalled();
+  expect(service.randomNumber).toHaveBeenCalledTimes(1);
+  expect(service.randomNumber).toHaveBeenCalledWith(10, 2);
+});
