@@ -65,7 +65,7 @@ test('Mock da função subtrair de modo que possa restaurar sua implementação 
 
   expect(mockSubtrair(10, 2)).toBe(20);
   expect(mockSubtrair).toHaveBeenCalled();
-  expect(mockSubtrair).toHaveBeenCalledTimes(1);
+  expect(mockSubtrair).toHaveBeenCalledTimes(2);
   expect(mockSubtrair).toHaveBeenCalledWith(10, 2);
 
   mockSubtrair.mockRestore();
