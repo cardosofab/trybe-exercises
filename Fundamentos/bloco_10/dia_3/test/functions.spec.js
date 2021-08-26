@@ -29,3 +29,22 @@ describe("testando implementações", () => {
     expect(service.thirdFunction).toHaveBeenCalledWith("tr", "y", "be");
   });
 });
+
+// 5 - Utilizando as mesmas funções do exercício anterior, repita a implementação para a primeira função. Após repetir a implementação, restaure a implementação original e crie os testes necessários para validar.
+
+describe("testando implementações", () => {
+  test("mockando função para receber um parâmetro e retornar em caixa baixa", () => {
+    const first = jest
+      .spyOn(service, "firstFunction")
+      .mockImplementation(a => a.toLowerCase());
+
+    expect(first("UPPERCASE")).toBe("uppercase");
+    expect(first).toHaveBeenCalled();
+    expect(first).toHaveBeenCalledTimes(2);
+    expect(first).toHaveBeenCalledWith("UPPERCASE");
+
+    service.firstFunction.mockRestore();
+
+    expect(service.firstFunction("lowercase")).toBe("LOWERCASE");
+  });
+});
