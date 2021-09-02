@@ -5,29 +5,41 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      oneCliques: 0,
+      twoCliques: 0,
+      threeCliques: 0,
+    }
+    
     this.oneClick = this.oneClick.bind(this)
     this.twoClick = this.twoClick.bind(this)
     this.threeClick = this.threeClick.bind(this)
   }
   
   oneClick() {
-    console.log('"this" do botão 1 :', this);
+    this.setState((estadoAnterior, _props) => ({
+      oneCliques: estadoAnterior.oneCliques + 1
+    }))
   }
   
   twoClick() {
-    console.log('"this" do botão 2 :', this);
+    this.setState((estadoAnterior, _props) => ({
+      twoCliques: estadoAnterior.twoCliques + 1
+    }))
   }
   
   threeClick() {
-    console.log('"this" do botão 3 :', this);
+    this.setState((estadoAnterior, _props) => ({
+      threeCliques: estadoAnterior.threeCliques + 1
+    }))
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.oneClick}>Primeiro botão</button>
-        <button onClick={this.twoClick}>Segundo botão</button>
-        <button onClick={this.threeClick}>Terceiro botão</button>
+        <button onClick={this.oneClick}>{this.state.oneCliques}</button>
+        <button onClick={this.twoClick}>{this.state.twoCliques}</button>
+        <button onClick={this.threeClick}>{this.state.threeCliques}</button>
       </div>
     );
   }
