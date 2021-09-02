@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   changeColor(state) {
-    return state % 2 === 0 ? 'green' : 'blue';
+    return state % 2 === 0 ? 'green' : 'white';
   }
   
   oneClick() {
