@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import pokemons from './data';
 import PropTypes from 'prop-types';
 
-console.log(pokemons);
 
 class Pokemon extends Component {
   render() {
