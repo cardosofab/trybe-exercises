@@ -53,6 +53,19 @@
             return state;
         }
       }
+
+      const previousButton = document.getElementById('previous');
+      const nextButton = document.getElementById('next');
+      const previousColor = () => ({
+        type: PREVIOUS_COLOR,
+      });
+
+      const nextColor = () => ({
+        type: NEXT_COLOR,
+      });
+
+      previousButton.addEventListener(store.dispatch(previouspreviousColor()));
+      nextButton.addEventListener(store.dispatch(nextColor()));
     </script>
   </body>
 </html>
