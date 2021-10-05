@@ -38,34 +38,50 @@
         index: 0,
       };
 
-      const store = Redux.createStore(reducer);
-
+      
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch (action.type) {
-          case NEXT_COLOR:
-            index: state.index < 5 ? state.index + 1 : state.index = 0;
-            colors: state.colors[state.index];
-            case PREVIOUS_COLOR:
-              index: state.index < 0 ? state.index - 1 : state.index = 0;
-              colors: state.colors[state.index];
-        
-          default:
-            return state;
-        }
-      }
-
+          case 'NEXT_COLOR':
+            return {
+              ...state,
+              index: state.index < 5 ? state.index + 1 : 0,
+              // colors: state.colors[state.index];
+            }
+            case 'PREVIOUS_COLOR':
+              return {
+                ...state,
+                index: state.index > 0 ? state.index - 1 : 5,
+                // colors: state.colors[state.index];
+              }
+              
+              default:
+                return state;
+              }
+            }
+            
       const previousButton = document.getElementById('previous');
       const nextButton = document.getElementById('next');
       const previousColor = () => ({
-        type: PREVIOUS_COLOR,
+        type: 'PREVIOUS_COLOR',
       });
-
+      
       const nextColor = () => ({
-        type: NEXT_COLOR,
+        type: 'NEXT_COLOR',
       });
 
-      previousButton.addEventListener(store.dispatch(previouspreviousColor()));
-      nextButton.addEventListener(store.dispatch(nextColor()));
-    </script>
+      const store = Redux.createStore(reducer);
+      
+      previousButton.addEventListener('click', () => {store.dispatch(previouspreviousColor())});
+      nextButton.addEventListener('click', () => {store.dispatch(nextColor())});
+      
+      store.subscribe(() => {
+        const { colors, index } = store.getState();
+        const span = document.getElementById('value');
+        span.innerHTML = colors[index];
+        const container = document.getElementById('container');
+        container.style.backgroundColor = colors[index];
+      });
+
+            </script>
   </body>
 </html>
