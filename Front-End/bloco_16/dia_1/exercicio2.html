@@ -50,6 +50,11 @@
 
       const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
         switch (action.type) {
+          case 'CHANGE_NAME_2':
+            return {
+              ...state,
+              nome: action.nome,
+            }
           default:
             return state;
         }
@@ -64,10 +69,25 @@
         type: 'CHANGE_NAME_1',
         nome,
       });
+      
+      const changeName2 = (nome) => ({
+        type: 'CHANGE_NAME_2',
+        nome,
+      });
 
       const store = createStore(reducers);
 
       
+      window.onload = () => {
+        setTimeout(() => {
+          //Seu dispatch vem aqui //
+          store.dispatch(changeName('Fabrício'));
+          store.dispatch(changeName2('Carolina'));
+        }, 3000);
+
+        console.log(store.getState());
+        
+      };
     </script>
   </body>
 </html>
