@@ -60,7 +60,7 @@
         }
       };
       
-      const reducers = combineReducers({
+      const reducers = Redux.combineReducers({
         meuPrimeiroReducer,
         meuSegundoReducer,
       });
@@ -74,9 +74,16 @@
         type: 'CHANGE_NAME_2',
         nome,
       });
-
-      const store = createStore(reducers);
-
+      
+      const store = Redux.createStore(reducers);
+      
+      store.subscribe(() => {
+        const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+        const nome1 = document.getElementById('nome-1');
+        const nome2 = document.getElementById('nome-2');
+        nome1.innerHTML = meuPrimeiroReducer.nome;
+        nome2.innerText = meuSegundoReducer.nome;
+      });
       
       window.onload = () => {
         setTimeout(() => {
@@ -84,9 +91,6 @@
           store.dispatch(changeName('Fabrício'));
           store.dispatch(changeName2('Carolina'));
         }, 3000);
-
-        console.log(store.getState());
-        
       };
     </script>
   </body>
