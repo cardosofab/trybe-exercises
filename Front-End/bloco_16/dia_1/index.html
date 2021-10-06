@@ -24,43 +24,61 @@
         height: 50px;
         width: 200px;
       }
-    </style>
+      </style>
   </head>
   <body>
     <div id="container">
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="random">Random color</button>
     </div>
     <script>
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
-
+      
+      function criarCor() {
+        const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let cor = '#';
+        const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+        for (let i = 0; i < 6; i += 1) {
+            cor += oneChar[aleatorio()];
+        }
+        return cor;
+      }
       
       const reducer = (state = ESTADO_INICIAL, action) => {
         switch (action.type) {
           case 'NEXT_COLOR':
             return {
               ...state,
-              index: state.index < 5 ? state.index + 1 : 0,
-              // colors: state.colors[state.index];
+              index: state.index < state.colors.length - 1 ? state.index + 1 : 0,
             }
             case 'PREVIOUS_COLOR':
               return {
                 ...state,
-                index: state.index > 0 ? state.index - 1 : 5,
-                // colors: state.colors[state.index];
+                index: state.index > 0 ? state.index - 1 : state.colors.length - 1,
+              }
+
+            case 'RANDOM_COLOR':
+              return {
+                ...state,
+                colors: [...state.colors, criarCor()],
+                // colors: state.colors.push(criarCor()),
+                // index: state.colors.length,
+                index: state.colors.length - 1,
               }
               
-              default:
+            default:
                 return state;
               }
             }
             
       const previousButton = document.getElementById('previous');
       const nextButton = document.getElementById('next');
+      const randomButton = document.getElementById('random');
       const previousColor = () => ({
         type: 'PREVIOUS_COLOR',
       });
@@ -68,11 +86,17 @@
       const nextColor = () => ({
         type: 'NEXT_COLOR',
       });
+      
+      const randomColor = () => ({
+        type: 'RANDOM_COLOR',
+      });
+
 
       const store = Redux.createStore(reducer);
       
-      previousButton.addEventListener('click', () => {store.dispatch(previouspreviousColor())});
-      nextButton.addEventListener('click', () => {store.dispatch(nextColor())});
+      previousButton.addEventListener('click', () => store.dispatch(previousColor()));
+      nextButton.addEventListener('click', () => store.dispatch(nextColor()));
+      randomButton.addEventListener('click', () => store.dispatch(randomColor()));
       
       store.subscribe(() => {
         const { colors, index } = store.getState();
@@ -82,6 +106,6 @@
         container.style.backgroundColor = colors[index];
       });
 
-            </script>
+    </script>
   </body>
 </html>
