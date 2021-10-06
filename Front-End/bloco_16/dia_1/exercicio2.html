@@ -38,6 +38,11 @@
 
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
+          case 'CHANGE_NAME_1':
+            return {
+              ...state,
+              nome: action.nome
+            }
           default:
             return state;
         }
@@ -55,7 +60,14 @@
         meuSegundoReducer,
       });
 
+      const changeName = (nome) => ({
+        type: 'CHANGE_NAME_1',
+        nome,
+      });
+
       const store = createStore(reducers);
+
+      
     </script>
   </body>
 </html>
