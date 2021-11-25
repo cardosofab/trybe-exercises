@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from 'react';
 
 function App() {
+  const [timer, setTimer] = useState(0);
+  const [randomNumber, setRandomNumber] = useState();
+  const [isShowing, setIsShowing] = useState(false);
+
+  useEffect(() => handleTimer());
+  useEffect(() => showRandomNumber());
+  useEffect(() => multipleOfThreeOrFive(), []);
+
+  function handleTimer() {
+    setTimeout(() => setTimer(timer + 1), 1000);
+  }
+
+  function showRandomNumber() {
+    if (timer % 10 === 0) {
+      setRandomNumber(Math.floor(Math.random() * 100))
+    }
+    else setRandomNumber('');
+  }
+
+  function multipleOfThreeOrFive() {
+    if (randomNumber % 3 === 0 || randomNumber % 5 === 0) {
+      setIsShowing(true)
+      setTimeout(() => setIsShowing(false), 4);
+    };
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>UseEffect</h1>
+      <section>{`Timer: ${timer}`}</section>
+      <section>{`Número aleatório: ${randomNumber}`}</section>
+      <section>{isShowing && 'Acerto'}</section>
+    </>
   );
 }
 
