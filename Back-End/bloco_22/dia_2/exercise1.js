@@ -14,3 +14,10 @@ function exerciseOne(num1, num2, num3) {
   return promise;
 }
 
+const firstNumber = Math.floor(Math.random() * 100 + 1);
+const secondNumber = Math.floor(Math.random() * 100 + 1);
+const thirdNumber = Math.floor(Math.random() * 100 + 1);
+
+exerciseOne(firstNumber, secondNumber, thirdNumber)
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err.message));
