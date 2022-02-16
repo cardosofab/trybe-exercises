@@ -26,3 +26,6 @@ export function rectangle(base: number, height: number): number {
   return base * height;
 }
 
+export function losango(diagonalMaior: number, diagonalMenor: number): number {
+  return (diagonalMaior * diagonalMenor) / 2;
+}
