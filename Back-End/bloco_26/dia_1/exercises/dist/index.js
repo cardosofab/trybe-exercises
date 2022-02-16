@@ -34,3 +34,4 @@ console.log(`Retângulo de base 10cm e altura 25cm: ${Exercise.rectangle(10, 25)
 console.log(`Retângulo de base 5cm e altura 30cm: ${Exercise.rectangle(5, 30)}cm²`);
 console.log(`Retângulo de base 100cm e altura 200cm: ${Exercise.rectangle(10, 25)}cm²`);
 console.log(`Losango com diagonais de 10cm e 5cm: ${Exercise.losango(10, 5)}cm²`);
+console.log(`Trapézio com base maior de 100cm, base menor de 70cm e altura de 50cm: ${Exercise.trapezio(100, 70, 50)} cm²`);
