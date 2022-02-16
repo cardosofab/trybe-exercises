@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.trapezio = exports.losango = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
+exports.circle = exports.trapezio = exports.losango = exports.rectangle = exports.square = exports.triangle = exports.sumArray = exports.add = exports.personAge = exports.greeter = void 0;
 function greeter(name) {
     return `Olá ${name}!`;
 }
@@ -37,3 +37,7 @@ function trapezio(baseMaior, baseMenor, altura) {
     return ((baseMaior + baseMenor) * altura) / 2;
 }
 exports.trapezio = trapezio;
+function circle(raio) {
+    return 3.14 * raio ** 2;
+}
+exports.circle = circle;

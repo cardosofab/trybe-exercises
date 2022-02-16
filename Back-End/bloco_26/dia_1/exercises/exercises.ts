@@ -33,3 +33,7 @@ export function losango(diagonalMaior: number, diagonalMenor: number): number {
 export function trapezio(baseMaior: number, baseMenor: number, altura: number): number {
   return ((baseMaior + baseMenor) * altura) / 2;
 }
+
+export function circle(raio: number): number {
+  return 3.14 * raio ** 2;
+}
