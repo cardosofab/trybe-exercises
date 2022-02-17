@@ -19,11 +19,11 @@ function convert(units: string[], value: number, forUnity: string, toUnity: stri
 function exec(units: string[]) {
     const value = readline.questionFloat("Digite o valor a ser convertido: \n");
 
-    const forUnityChoice = readline.keyInSelect(units, "Escolha um número para a unidade base:", { cancel: "SAIR" });
+    const forUnityChoice = readline.keyInSelect(units, "Escolha a opção para a unidade base:", { cancel: "SAIR" });
 
     if (forUnityChoice === -1) return console.log("Saindo!");
 
-    const toUnityChoice = readline.keyInSelect(units, "Escolha um número para a conversão:", { cancel: "SAIR" });
+    const toUnityChoice = readline.keyInSelect(units, "Escolha a unidade para a conversão:", { cancel: "SAIR" });
 
     if (toUnityChoice === -1) return console.log("Saindo!");
 
